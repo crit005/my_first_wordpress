@@ -22,3 +22,29 @@ function learningWordPress_resources() { // Create function for register css fil
 }
 
 add_action('wp_enqueue_scripts', 'learningWordPress_resources');// register function to default runing
+
+
+function get_post_by_slugname($name,$type){
+
+$post_slug = $name;
+$args=array(
+  'name' => $post_slug,
+  'post_type' => $type,
+  'post_status' => 'publish',
+  'posts_per_page' => 1,
+  'caller_get_posts'=> 1
+);
+$my_query = null;
+$my_query = new WP_Query($args);
+if( $my_query->have_posts() ) {  
+  while ($my_query->have_posts()) : $my_query->the_post();    
+  ?>
+    <p><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></p>
+    <p>
+        <?php the_content();?>
+    </p>
+    <?php
+  endwhile;
+}
+wp_reset_query();  // Restore global post data stomped by the_post().
+}

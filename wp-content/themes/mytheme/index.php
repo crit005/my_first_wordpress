@@ -17,7 +17,7 @@
             $(document).ready(function () {
                 $('#fullpage').fullpage({
                     anchors: ['firstPage', 'secondPage', '3rdPage'],
-                    sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+                    //sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
                     css3: true
                 });
             });
@@ -33,17 +33,8 @@
             <div class="section " id="section0">
                 <div >
                     <?php
-if (have_posts()) :
-	while (have_posts()) : 
-the_post();
-	// Write any content as you want here
-	the_content();
-endwhile;
-else :
-echo '<p>No content found</p>';	
-endif;
-?>
-
+                        get_post_by_slugname('Sample Page','page')
+                    ?>
                 </div>
             </div>
             <div class="section" id="section1">
@@ -61,11 +52,16 @@ endif;
                     <h1>Slide 2</h1>
                     <img src="<?php echo(get_template_directory_uri()) ?>/imgs/iphone-blue.png" alt="iphone" id="iphone-two" />
                 </div>-->
-
+                    <?php
+                        get_post_by_slugname('About Us','page')
+                    ?>
             </div>
             <div class="section" id="section2">
                 <div class="intro">
                     <h1>Enjoy it</h1>
+                    <?php
+                        get_post_by_slugname('SPORTBOOK','page')
+                    ?>
                 </div>
             </div>
         </div>
