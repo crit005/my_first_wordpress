@@ -33,7 +33,7 @@
             <div class="section " id="section0">
                 <div >
                     <?php
-                        get_post_by_slugname('Sample Page','page')
+                       // get_post_by_slugname('Sample Page','page')
                     ?>
                 </div>
             </div>
@@ -53,16 +53,35 @@
                     <img src="<?php echo(get_template_directory_uri()) ?>/imgs/iphone-blue.png" alt="iphone" id="iphone-two" />
                 </div>-->
                     <?php
-                        get_post_by_slugname('About Us','page')
+                       // get_post_by_slugname('sample page','page');
+                                function _get_page_by_name($page_name, $output = OBJECT) {
+                                        global $wpdb;
+                                        $page = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_name = %s AND post_type='page'", $page_name ));
+                                        if ( $page )
+                                                return get_page($page, $output);
+
+                                        return null;
+                                }
                     ?>
             </div>
             <div class="section" id="section2">
                 <div class="intro">
                     <h1>Enjoy it</h1>
                     <?php
-                        get_post_by_slugname('SPORTBOOK','page')
+                       // get_post_by_slugname('SPORTBOOK','page')
                     ?>
-                </div>
+                    <?php
+                        if (have_posts()) :
+                                while (have_posts()) : 
+                        the_post();
+                                // Write any content as you want here
+                                the_content();
+                        endwhile;
+                        else :
+                        echo '<p>No content found</p>';	
+                        endif;
+                    ?>
+                                    </div>
             </div>
         </div>
         <div id="footer">Footer<?= wp_footer() ?></div>

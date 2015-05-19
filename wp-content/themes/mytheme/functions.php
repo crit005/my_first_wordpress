@@ -45,6 +45,8 @@ if( $my_query->have_posts() ) {
     </p>
     <?php
   endwhile;
+}else{
+    echo('page not found');
 }
 wp_reset_query();  // Restore global post data stomped by the_post().
 }
