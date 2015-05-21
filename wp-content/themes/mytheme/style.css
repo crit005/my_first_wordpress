@@ -6,45 +6,58 @@ Version: 1.0
 */
 
 body {
-	font-family: Arial, sans-serif;
-	font-size: 14px;
-	color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #FFF;
+    background-color: #000000 !important;
+    text-align: left;
 }
 
 a:link,
 a:visited {
-	color: #006ec3;
+    color: #006ec3;
+    text-decoration:none;
+}
+h1{
+    font-size: 54px !important;
+    color: #ca3501 !important;    
 }
 
+h2{
+    font-size: 30px !important;
+    color: #ca3501 !important;    
+}
+
+
 p {
-	line-height: 1.65em;
+    line-height: 1.65em;
 }
 
 /* General Layout */
-div.container {
-	max-width: 920px;
-	margin: 0 auto;
-	padding-left: 20px;
-	padding-right: 20px;
-}
+/*div.container {
+        max-width: 920px;
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+}*/
 
 article.post {
-	border-bottom: 2px dotted #bbbbbb;
+    border-bottom: 2px dotted #bbbbbb;
 }
 
 article.post:last-of-type {
-	border-bottom: none;
+    border-bottom: none;
 }
 
 /* Header */
 .site-header {
-	border-bottom: 2px solid #999;
+    border-bottom: 2px solid #999;
 }
 
 /* Footer */
 .site-footer {
-	margin-top: 30px;
-	border-top: 2px solid #999;
+    margin-top: 30px;
+    border-top: 2px solid #999;
 }
 
 /* Style for our header texts
@@ -54,36 +67,61 @@ article.post:last-of-type {
 /* Centered texts in each section
 * --------------------------------------- */
 .section{
-        text-align:center;
+    // text-align:center;
 }
 
 /* Fixed header and footer.
 * --------------------------------------- */
 #header, #footer{
-        position:fixed;
-        height: 50px;
-        display:block;
-        width: 100%;
-        background: #333;
-        z-index:9;
-        text-align:center;
-        color: #f2f2f2;
-        padding: 20px 0 0 0;
+    position:fixed;
+    height: 50px;
+    display:block;
+    width: 100%;
+    background: rgba(74,4,0,0.3);
+    z-index:9;
+    text-align:center;
+    color: #f2f2f2;
+    padding: 20px 0 0 0;
 }
 
-#header{        
-        background: rgba(0,0,0,1);
-        width: 100%;
-        position: fixed;
-        z-index: 996;
-        font-family: unfont;
-        font-size: 16px;
-        padding: 1.75% 0;
-        top: 0;
-        left: 0;
+#header{
+    width: 100%;
+    min-height: 90px;
+    position: fixed;
+    z-index: 996;
+    font-family: unfont;
+    font-size: 16px;
+    padding: 1.75% 0;
+    top: 0;
+    left: 0;
+    border-bottom: rgba(225,225,255,0.2) solid 2px;
 }
 #footer{
-        bottom:0px;
+    bottom:0px;
 }
 
+/*style session background*/
 
+#section0{
+    background: url(imgs/home/home_gb.jpg) center center no-repeat;
+}
+#section2{
+    background: url(imgs/home/sport_bg.jpg) center center no-repeat;
+}
+#section3{
+    background: url(imgs/home/casino_bg.jpg) center center no-repeat;
+}
+#section4{
+    background: url(imgs/home/tangkas_bg.jpg) center center no-repeat;
+}
+#section5{
+    background: url(imgs/home/lottery_bg.jpg) center center no-repeat;
+}
+
+.home_block_page_content{    
+    max-height: 300px;
+    overflow:scroll;
+}
+.bank_description{
+    font-size:14px;    
+}

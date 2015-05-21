@@ -1,0 +1,35 @@
+@media(max-width: 767px){
+    h1{
+        font-size: 35px !important;
+        color: #ca3501 !important;    
+    }
+
+    h2{
+        font-size: 20px !important;
+        color: #ca3501 !important;    
+    }
+    .image-present-content{
+        display: none;
+    } 
+    .home_conten_page{
+        margin-top: 70px;
+    }
+    .home_block_page_content {
+        max-height: 300px;
+        overflow: scroll;
+    }
+    .about-us-content{
+        max-height: 200px;
+    }
+    .payment_info{
+        text-align: center;
+        padding-top: 20px;
+    }
+    .payment_info img {
+        width: 35%;        
+        margin-right: 20px;
+    }
+    
+
+
+}

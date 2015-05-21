@@ -1,0 +1,21 @@
+@media(max-width: 1199px){
+   
+    .payment_info img {
+        width: 40%;         
+    }
+    .image-present-content{
+        text-align: center;
+    }
+    .image-present-content img{
+       height: 390px;
+       
+    }
+    
+    .home_conten_page{
+        margin-top: 70px;
+    }
+    .home_block_page_content {
+        max-height: 390px;
+        overflow: scroll;
+      }
+}

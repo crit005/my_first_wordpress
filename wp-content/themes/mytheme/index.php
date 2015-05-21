@@ -16,7 +16,7 @@
         <script type="text/javascript">
             $(document).ready(function () {
                 $('#fullpage').fullpage({
-                    anchors: ['firstPage', 'secondPage', '3rdPage'],
+                    anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage'],
                     //sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
                     css3: true
                 });
@@ -31,13 +31,12 @@
 
         <div id="fullpage">
             <div class="section " id="section0">
-                <div >
-                    <?php
-                       // get_post_by_slugname('Sample Page','page')
-                    ?>
+                <div class="container">
+                    <!--put your contain here-->
                 </div>
             </div>
             <div class="section" id="section1">
+                <!--page slide-->
                 <!--<div class="slide" id="slide1">
                     <div class="intro">
                         <h1>How to do it</h1>
@@ -52,40 +51,207 @@
                     <h1>Slide 2</h1>
                     <img src="<?php echo(get_template_directory_uri()) ?>/imgs/iphone-blue.png" alt="iphone" id="iphone-two" />
                 </div>-->
+                <!--end page slide-->
+                <div class="container home_conten_page">                    
                     <?php
-                       // get_post_by_slugname('sample page','page');
-                                function _get_page_by_name($page_name, $output = OBJECT) {
-                                        global $wpdb;
-                                        $page = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_name = %s AND post_type='page'", $page_name ));
-                                        if ( $page )
-                                                return get_page($page, $output);
+                    $args = array(
+                        'name' => 'About Us',
+                        'post_type' => 'page',
+                        'post_status' => 'publish',
+                        'posts_per_page' => 1,
+                        'caller_get_posts' => 1
+                    );
+                    $my_query = null;
+                    $my_query = new WP_Query($args);
+                    if ($my_query->have_posts()) {
+                        while ($my_query->have_posts()) : $my_query->the_post();
+                            ?>
+                            <h1 class="text-center"><?= the_title() ?></h1>
+                            <br/>
+                            <div class="row">
+                                <div class="col-sm-6 home_block_page_content about-us-content">
+                                    <?= the_content() ?>
+                                </div>
+                                <div class="col-sm-offset-7 payment_info">                            
+                                    <h2 style="margin-top: 0;"><u>PAYMENT OPTION</u></h2>
+                                    <br/>
+                                    <img src="<?= get_template_directory_uri() ?>/imgs/home/bca-bank.png"/>
+                                    <div class="bank_description hidden-xs">
+                                        Monday – Friday : 21:00 PM – 01:00 AM 
+                                        Saturday : 18:00-20:00 PM & 00.00-06.00 AM 
+                                        The big day and date in red not offline
+                                    </div>                                    
 
-                                        return null;
-                                }
+                                    <img src="<?= get_template_directory_uri() ?>/imgs/home/mandiri-bank.png"/><br/>
+                                    <div class="bank_description  hidden-xs">
+                                        Monday – Friday : 21:00 PM – 01:00 AM 
+                                        Saturday : 18:00-20:00 PM & 00.00-06.00 AM 
+                                        The big day and date in red not offline
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                        endwhile;
+                    }else {
+                        echo ('<p> Page request not found </p>');
+                    }
+                    wp_reset_query();
                     ?>
+
+                </div>
+
             </div>
             <div class="section" id="section2">
-                <div class="intro">
-                    <h1>Enjoy it</h1>
+                <div class="container home_conten_page">                    
                     <?php
-                       // get_post_by_slugname('SPORTBOOK','page')
-                    ?>
-                    <?php
-                        if (have_posts()) :
-                                while (have_posts()) : 
-                        the_post();
-                                // Write any content as you want here
-                                the_content();
+                    $args = array(
+                        'name' => 'CASINO ONLINE',
+                        'post_type' => 'page',
+                        'post_status' => 'publish',
+                        'posts_per_page' => 1,
+                        'caller_get_posts' => 1
+                    );
+                    $my_query = null;
+                    $my_query = new WP_Query($args);
+                    if ($my_query->have_posts()) {
+                        while ($my_query->have_posts()) : $my_query->the_post();
+                            ?>
+                            <h1 class="text-center"><?= the_title() ?></h1>
+                            <br/>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-4 image-present-content">
+                                    <img src="<?= get_template_directory_uri() ?>/imgs/home/sport_girl.png"/>                                    
+                                </div>
+                                <div class="col-sm-offset-6 home_block_page_content">
+                                    <?= the_content() ?>
+                                </div>
+                                
+                            </div>
+                            <?php
                         endwhile;
-                        else :
-                        echo '<p>No content found</p>';	
-                        endif;
+                    }else {
+                        echo ('<p> Page request not found </p>');
+                    }
+                    wp_reset_query();
                     ?>
-                                    </div>
-            </div>
-        </div>
-        <div id="footer">Footer<?= wp_footer() ?></div>
 
+                </div>
+            </div>
+
+            <div class="section" id="section3">
+                <div class="container home_conten_page">                    
+                    <?php
+                    $args = array(
+                        'name' => 'CASINO ONLINE',
+                        'post_type' => 'page',
+                        'post_status' => 'publish',
+                        'posts_per_page' => 1,
+                        'caller_get_posts' => 1
+                    );
+                    $my_query = null;
+                    $my_query = new WP_Query($args);
+                    if ($my_query->have_posts()) {
+                        while ($my_query->have_posts()) : $my_query->the_post();
+                            ?>
+                            <h1 class="text-center"><?= the_title() ?></h1>
+                            <br/>
+                            <div class="row">                                
+                                <div class="col-sm-6 home_block_page_content">
+                                    <?= the_content() ?>
+                                </div>
+                                <div class="col-sm-offset-6 col-md-offset-8 image-present-content">
+                                    <img src="<?= get_template_directory_uri() ?>/imgs/home/casino_girl.png" />
+                                </div>
+                                
+                            </div>
+                            <?php
+                        endwhile;
+                    }else {
+                        echo ('<p> Page request not found </p>');
+                    }
+                    wp_reset_query();
+                    ?>
+
+                </div>
+            </div>
+
+            <div class="section" id="section4">
+                <div class="container home_conten_page">                    
+                    <?php
+                    $args = array(
+                        'name' => 'TANGKAS ONLINE',
+                        'post_type' => 'page',
+                        'post_status' => 'publish',
+                        'posts_per_page' => 1,
+                        'caller_get_posts' => 1
+                    );
+                    $my_query = null;
+                    $my_query = new WP_Query($args);
+                    if ($my_query->have_posts()) {
+                        while ($my_query->have_posts()) : $my_query->the_post();
+                            ?>
+                            <h1 class="text-center"><?= the_title() ?></h1>
+                            <br/>
+                            <div class="row">
+                                <div class="col-sm-4 image-present-content">
+                                    <img src="<?= get_template_directory_uri() ?>/imgs/home/tangkas_girl.png"/>                                    
+                                </div>
+                                <div class="col-sm-offset-6  home_block_page_content">
+                                    <?= the_content() ?>
+                                </div>
+                                
+                            </div>
+                            <?php
+                        endwhile;
+                    }else {
+                        echo ('<p> Page request not found </p>');
+                    }
+                    wp_reset_query();
+                    ?>
+
+                </div>
+            </div>
+
+            <div class="section" id="section5">
+                <div class="container home_conten_page">                    
+                    <?php
+                    $args = array(
+                        'name' => 'TOTO',
+                        'post_type' => 'page',
+                        'post_status' => 'publish',
+                        'posts_per_page' => 1,
+                        'caller_get_posts' => 1
+                    );
+                    $my_query = null;
+                    $my_query = new WP_Query($args);
+                    if ($my_query->have_posts()) {
+                        while ($my_query->have_posts()) : $my_query->the_post();
+                            ?>
+                            <h1 class="text-center"><?= the_title() ?></h1>
+                            <br/>
+                            <div class="row">                                
+                                <div class="col-sm-6 home_block_page_content">
+                                    <?= the_content() ?>
+                                </div>
+                                <div class="col-sm-offset-6 col-md-offset-8 image-present-content">
+                                    <img src="<?= get_template_directory_uri() ?>/imgs/home/lottery_girl.png" />
+                                </div>
+                                
+                            </div>
+                            <?php
+                        endwhile;
+                    }else {
+                        echo ('<p> Page request not found </p>');
+                    }
+                    wp_reset_query();
+                    ?>
+
+                </div>
+            </div>
+
+        </div>
+        <!--div id="footer">Footer</div-->
+        <?= wp_footer() ?>
 
     </body>
 
