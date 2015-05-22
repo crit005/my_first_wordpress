@@ -15,8 +15,7 @@
         margin-top: 70px;
     }
     .home_block_page_content {
-        max-height: 300px;
-        overflow: scroll;
+        max-height: 300px;       
     }
     .about-us-content{
         max-height: 200px;
@@ -29,7 +28,29 @@
         width: 35%;        
         margin-right: 20px;
     }
-    
+
+
+    /*bootstrap menu*/
+    .navbar-default .navbar-nav > .open > a,
+    .navbar-default .navbar-nav > .active > a{
+        background: #cccccc; 
+    }
+    .navbar-default .navbar-nav > .open > a:hover,
+    .navbar-default .navbar-nav > .active > a:hover{
+        background: #5A5A5A; 
+    }
+    .navbar-default .navbar-text {
+        color: white;
+    }
+    .navbar-default .navbar-nav > li > a {
+        color: white;
+        background: #5A5A5A;
+    }
+    .navbar-default .navbar-nav > li > a:hover,
+    .navbar-default .navbar-nav > li > a:focus {
+        color: #333;
+        background: #cccccc;
+    }
 
 
 }

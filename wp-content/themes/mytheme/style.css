@@ -90,7 +90,7 @@ article.post:last-of-type {
     position: fixed;
     z-index: 996;
     font-family: unfont;
-    font-size: 16px;
+    font-size: 14px;
     padding: 1.75% 0;
     top: 0;
     left: 0;
@@ -119,9 +119,49 @@ article.post:last-of-type {
 }
 
 .home_block_page_content{    
-    max-height: 300px;
-    overflow:scroll;
+    max-height: 300px;    
 }
 .bank_description{
     font-size:14px;    
+}
+
+//customize bootstrap menu
+
+.navbar-nav li a{
+ 
+}
+.navbar-default{
+ background: none;   
+ border: none;
+ box-shadow: none;
+ font-family: Arial, sans-serif;
+ 
+}
+.navbar-default a{
+    text-transform: uppercase;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .active > a{
+  background: none;  
+}
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .active > a:hover{
+  background: none;  
+}
+.navbar-default .navbar-text {
+  color: white;
+}
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #333;
+  background-color: transparent;
+}
+
+/*body-page*/
+.body_page{
+    margin-top: 90px;
 }

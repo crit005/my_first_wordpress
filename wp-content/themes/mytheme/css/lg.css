@@ -17,8 +17,7 @@
         // margin-top: 70px;
     }
     .home_block_page_content {
-        max-height: 430px;
-        overflow: scroll;
+        max-height: 430px;        
         margin-top: 40px;
     }
 }
