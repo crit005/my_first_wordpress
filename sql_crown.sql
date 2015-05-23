@@ -2,7 +2,7 @@
 -- Host:                         localhost
 -- Server version:               5.6.24 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
--- HeidiSQL Version:             9.1.0.4867
+-- HeidiSQL Version:             9.2.0.4947
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -87,6 +87,34 @@ CREATE TABLE IF NOT EXISTS `wp_options` (
   `autoload` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'yes',
   PRIMARY KEY (`option_id`),
   UNIQUE KEY `option_name` (`option_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Data exporting was unselected.
+
+
+-- Dumping structure for table wp1.wp_popularpostsdata
+CREATE TABLE IF NOT EXISTS `wp_popularpostsdata` (
+  `postid` bigint(20) NOT NULL,
+  `day` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `last_viewed` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `pageviews` bigint(20) DEFAULT '1',
+  PRIMARY KEY (`postid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Data exporting was unselected.
+
+
+-- Dumping structure for table wp1.wp_popularpostssummary
+CREATE TABLE IF NOT EXISTS `wp_popularpostssummary` (
+  `ID` bigint(20) NOT NULL AUTO_INCREMENT,
+  `postid` bigint(20) NOT NULL,
+  `pageviews` bigint(20) NOT NULL DEFAULT '1',
+  `view_date` date NOT NULL DEFAULT '0000-00-00',
+  `last_viewed` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `ID_date` (`postid`,`view_date`),
+  KEY `postid` (`postid`),
+  KEY `last_viewed` (`last_viewed`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Data exporting was unselected.

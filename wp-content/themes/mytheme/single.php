@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <style type="text/css">
-    body{background: url(<?= get_template_directory_uri()?>/imgs/home/pag_bg.jpg) top center no-repeat fixed; background-size: cover;}
+    body{background: url(<?= get_template_directory_uri() ?>/imgs/home/pag_bg.jpg) top center no-repeat fixed; background-size: cover;}
 </style>
 <div class="container body_page">
 
@@ -9,7 +9,8 @@
         while (have_posts()) :
             the_post();
             // Write any content as you want here
-            ?>            
+            ?>
+
             <div class="row">
                 <div class="col-sm-8">
                     <h1><?= the_title() ?></h1>

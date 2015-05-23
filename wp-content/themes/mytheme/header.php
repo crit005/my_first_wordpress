@@ -4,6 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo('charset'); ?>" />        
         <title><?= bloginfo('name') ?></title>
+        <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
         <!--[if IE]>
                 <script type="text/javascript">
                          var console = { log: function() {} };

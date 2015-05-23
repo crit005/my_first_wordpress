@@ -1,12 +1,14 @@
 @media(max-width: 767px){
     h1{
-        font-size: 35px !important;
-        color: #ca3501 !important;    
+        font-size: 40px ;
+        color: #dabf28 ;
+        font-family: 'Oswald', sans-serif;
     }
 
     h2{
-        font-size: 20px !important;
-        color: #ca3501 !important;    
+        font-size: 20px;
+        color: #de1e1d;  
+        font-family: 'Oswald', sans-serif;
     }
     .image-present-content{
         display: none;
