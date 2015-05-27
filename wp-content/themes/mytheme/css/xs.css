@@ -1,7 +1,7 @@
 @media(max-width: 767px){
     h1{
         font-size: 40px ;
-        color: #dabf28 ;
+        //color: #dabf28 ;
         font-family: 'Oswald', sans-serif;
     }
 
@@ -30,6 +30,10 @@
         width: 35%;        
         margin-right: 20px;
     }
+    .score_page{
+        max-height: 200px;
+    }
+
 
 
     /*bootstrap menu*/

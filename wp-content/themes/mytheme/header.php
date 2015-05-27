@@ -42,7 +42,7 @@
                             'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
                             'walker' => new wp_bootstrap_navwalker())
                         );
-                        ?>
+                        ?>                        
                     </div>
                 </nav>
             </div>

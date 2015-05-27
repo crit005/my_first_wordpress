@@ -23,8 +23,16 @@
             <h2><a href="<?=  the_permalink()?>"><?= the_title();?></a></h2>
                     <?= the_excerpt();?>
                 <?php endwhile; ?>
+            <?php
+                 //wpbeginner_numeric_posts_nav();
+                 the_posts_pagination(array(
+                     "prev_text"=>"« Prev",
+                     'next_text'=>'Next »',
+                     'screen_reader_text'=>' ',
+                     ));
+                ?>  
             <?php else : ?>
-                <?php get_template_part('content', 'none'); ?>
+                <?php  get_template_part('content', 'none'); ?>
             <?php endif; ?>
         </div>
         <div class="col-sm-4 right_sidebare">

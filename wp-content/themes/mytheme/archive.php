@@ -31,7 +31,16 @@
                     <?= the_excerpt() ?>
                 <?php endwhile; ?>
 
-                <?php //twentythirteen_paging_nav(); ?>
+                <?php
+                 
+                //wpbeginner_numeric_posts_nav();                
+                the_posts_pagination(array(
+                     "prev_text"=>"« Prev",
+                     'next_text'=>'Next »',
+                     'screen_reader_text'=>' ',
+                     ));
+                ?>                
+
 
             <?php else : ?>
                 <?php get_template_part('content', 'none'); ?>

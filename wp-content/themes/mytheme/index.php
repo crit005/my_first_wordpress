@@ -3,9 +3,13 @@
     $(document).ready(function () {
 
         $('#fullpage').fullpage({
-           // anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage'],
+            anchors: ['Home', 'AboutUs', 'SportOnline', 'CacinoOnline', 'TangkasOnline', 'Toto', 'ScoreNews'],
+            navigation: true,
+            navigationPosition: 'right',
+            navigationTooltips: ['Home', 'AboutUs', 'Sport Online', 'Cacino Online', 'Tangkas Online', 'Toto', 'Score News'],
             //sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
             //css3: true
+           // menu: '#menu',
         });
     });
 
@@ -16,7 +20,9 @@
             $(".home_block_page_content").mCustomScrollbar({
                 theme: "rounded"
             });
-
+            $(".score_page").mCustomScrollbar({
+                theme: "rounded"
+            });
         });
     })(jQuery);
 </script>
@@ -240,12 +246,12 @@
     <!--End content lottery-->
 
     <!--Content news block-->    
-    <div class="section" id="section5">
+    <div class="section" id="section6">
         <div class="container home_conten_page">                    
             <?php
             $args = array(
-                'name' => 'TOTO',
-                'post_type' => 'page',
+                //'name' => 'TOTO',
+                'post_type' => 'post',
                 'post_status' => 'publish',
                 'posts_per_page' => 1,
                 'caller_get_posts' => 1
@@ -255,14 +261,22 @@
             if ($my_query->have_posts()) {
                 while ($my_query->have_posts()) : $my_query->the_post();
                     ?>
-                    <h1 class="text-center"><?= the_title() ?></h1>
+                    <h1 class="text-center">SCORE NEWS</h1>
                     <br/>
-                    <div class="row">                                
-                        <div class="col-sm-6 home_block_page_content">
-                            <?= the_content() ?>
+                    <div class="row">
+
+                        <div class="col-sm-6 score_page">
+                            <a href="<?= the_permalink() ?>"><img style="max-width: 100%;" src="<?php echo catch_that_image(); ?>"/></a>
+                            <h2><a href="<?= the_permalink() ?>"><?= the_title() ?></a></h2>
+                            <span class="post_date"><?= the_date()?></span>
+                            <?= the_excerpt() ?>
                         </div>
-                        <div class="col-sm-offset-6 col-md-offset-8 image-present-content">
-                            <img src="<?= get_template_directory_uri() ?>/imgs/home/lottery_girl.png" />
+                        <div class="col-sm-offset-6 score_page right_sidebare" style="margin-top: 0;">
+                            <?php
+                            if (is_active_sidebar('right_sidebar')):
+                                dynamic_sidebar('right_sidebar');
+                            endif;
+                            ?>
                         </div>
 
                     </div>

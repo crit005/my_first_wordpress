@@ -14,6 +14,7 @@
             <div class="row">
                 <div class="col-sm-8">
                     <h1><?= the_title() ?></h1>
+                    <?= the_post_thumbnail('small-thumbnail')?>
                     <hr/>
                     <?= the_content(); ?>
                 </div>
@@ -26,6 +27,14 @@
                 </div>
             </div>
             <?php
+            // If comments are open or we have at least one comment, load up the comment template.
+//            if (comments_open() || get_comments_number()) :
+//                ?>
+                <!--<div class="comment_block">-->
+                    <?php //comments_template() ?>
+                <!--</div>-->
+                <?php
+//            endif;
         endwhile;
     else :
         echo '<p>No content found</p>';
